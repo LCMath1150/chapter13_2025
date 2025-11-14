@@ -17,7 +17,7 @@ app.get('/', (req,resp) => { resp.json(paintings)});
 
 
 app.get('/artist/:artistID',(req,resp) => {
-    const searchartistID = req.params.artistID();
+    const searchartistID = req.params.artistID;
     const matches = paintings.filter(obj => searchartistID == obj.artist.artistID);
     resp.json(matches);
 });
@@ -31,3 +31,4 @@ app.listen(port, () => {
     console.log("Server running at port = " + port);
 
 });
+
